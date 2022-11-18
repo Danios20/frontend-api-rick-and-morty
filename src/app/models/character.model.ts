@@ -11,6 +11,7 @@ export interface Character {
   episode:  string[];
   url:      string;
   created:  string;
+  lastEpisode?: number;
 }
 
 export interface Location {
