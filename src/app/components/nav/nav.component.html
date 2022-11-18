@@ -1,0 +1,40 @@
+<!-- MENU MOBILE -->
+<div class="show-mobile">
+  <div class="icons-mobile">
+    <button (click)="toggleSideMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img src="./assets/svg/logo_rick_and_morty.svg" alt="logo" style="width: 80px;">
+    </a>
+    <a href="">
+      <img id="logoMobile"src="./assets/images/logo_rick.jpg" alt="logo" style="width: 50px; height: 50px;">
+    </a>
+  </div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" [class.active]="activeSideMenu">
+    <button (click)="toggleSideMenu()">×</button>
+  </div>
+</div>
+
+<!-- MENU DESKTOP -->
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/svg/logo_rick_and_morty.svg" alt="logo">
+      </a>
+    </nav>
+
+    <div class="info">
+      <div class="account">Favorites</div>
+      <div>
+        <a href="">
+          <img src="./assets/images/logo_rick.jpg" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

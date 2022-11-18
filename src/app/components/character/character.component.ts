@@ -8,16 +8,17 @@ import { Character, CharacterDTO } from 'src/app/models/character.model';
 })
 export class CharacterComponent  {
   @Input() character!: CharacterDTO;
-  @Output() addedProduct = new EventEmitter<CharacterDTO>();
-  @Output() showProduct = new EventEmitter<number>();
+  @Output() addedCharacter = new EventEmitter<CharacterDTO>();
+  @Output() showCharacterDetail = new EventEmitter<number>();
 
   constructor() { }
 
   onAddToCart() {
-    this.addedProduct.emit(this.character);
+    this.addedCharacter.emit(this.character);
   }
 
   onShowDetail() {
-    this.showProduct.emit(this.character.id);
+    console.log('Estoy en detalle');
+    this.showCharacterDetail.emit(this.character.id);
   }
 }

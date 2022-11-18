@@ -8,13 +8,15 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./character-list.component.scss']
 })
 export class CharacterListComponent implements OnInit {
+  showCharacterDetail: boolean = false;
+  characterChosen!: CharacterDTO;
   flag: boolean;
   page: number = 1;
+  statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
+  @Input() characters: CharacterDTO[] = []
   constructor(private characterService: CharacterService) {
     this.flag = true;
    }
-
-  @Input() characters: CharacterDTO[] = []
 
   ngOnInit(): void {
 
@@ -31,8 +33,32 @@ export class CharacterListComponent implements OnInit {
         this.flag = false;
       },
     })
-
   }
+
+  toggleCharacterDetail() {
+    this.showCharacterDetail = !this.showCharacterDetail;
+  }
+
+  onShowCharacterDetail(id: number) {
+    this.statusDetail = 'loading';
+    this.toggleCharacterDetail();
+    this.characterService.getCharacter(id)
+    .subscribe({
+      next: data => {
+        this.characterChosen = data;
+        this.statusDetail = 'success';
+      },
+      error: error => {
+      window.alert(error);
+      this.statusDetail = 'error';
+      },
+      complete: () => {
+        this.flag = false;
+      },
+    })
+  }
+
+
 
   onLoadMore() {
     this.page ++;

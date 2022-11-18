@@ -2,8 +2,47 @@
   <app-character
     [character]="character"
     *ngFor="let character of characters"
+    (showCharacterDetail)="onShowCharacterDetail($event)"
   ></app-character>
 </div>
+
+<aside
+  *ngIf="characterChosen"
+  class="character-detail"
+  [class.active]="showCharacterDetail"
+>
+  <img
+    (click)="toggleCharacterDetail()"
+    src="./assets/images/icon_close.png"
+    alt="Close icon"
+  />
+  <app-image
+  *ngIf="characterChosen.image"
+  [img]="characterChosen.image"
+  class="character-img"
+></app-image>
+  <div class="character-info">
+    <p>{{ characterChosen.name }}</p>
+    <p>Status: {{ characterChosen.status }}</p>
+    <p>Specie: {{ characterChosen.species }}</p>
+    <p>Type: {{ characterChosen.type }}</p>
+    <p>Gender: {{ characterChosen.gender }}</p>
+    <p>Created: {{ characterChosen.created | date }}</p>
+  </div>
+
+  <div class="add-to-cart">
+
+    <button class="primary-button">
+      <img
+        src="./assets/svg/bt_add_to_cart.svg"
+        alt="Add to shopping cart icon"
+      />
+      <span>
+        Save as favorite
+      </span>
+    </button>
+  </div>
+</aside>
 
 <button
   (click)="onLoadMore()"

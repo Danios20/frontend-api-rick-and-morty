@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { map, retry, take, tap } from 'rxjs';
 
-import { Character } from '../models/character.model';
+import { Character, CharacterDTO } from '../models/character.model';
 import { environment } from 'src/environments/environment';
 
 
@@ -32,6 +32,6 @@ export class CharacterService {
   }
 
   getCharacter(id: number) {
-    return this.http.get<Character>(`${environment.baseUrlAPI}/${id}`);
+    return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`);
   }
 }

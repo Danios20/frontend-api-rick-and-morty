@@ -8,6 +8,7 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { FormsModule } from '@angular/forms';
 import { CharacterComponent } from './components/character/character.component';
 import { ImageComponent } from './components/image/image.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ImageComponent } from './components/image/image.component';
     AppComponent,
     CharacterListComponent,
     CharacterComponent,
-    ImageComponent
+    ImageComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
