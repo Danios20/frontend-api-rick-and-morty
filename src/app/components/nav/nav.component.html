@@ -7,9 +7,12 @@
     <a href="">
       <img src="./assets/svg/logo_rick_and_morty.svg" alt="logo" style="width: 80px;">
     </a>
-    <a href="">
-      <img id="logoMobile"src="./assets/images/logo_rick.jpg" alt="logo" style="width: 50px; height: 50px;">
-    </a>
+    <div class="cart">
+      <a href="">
+        <img id="logoMobile"src="./assets/images/logo_rick.jpg" alt="logo" style="width: 50px; height: 50px;">
+      </a>
+      <span class="counter">{{ counter }}</span>
+    </div>
   </div>
 
   <!-- SIDE MENU -->
@@ -29,10 +32,11 @@
 
     <div class="info">
       <div class="account">Favorites</div>
-      <div>
+      <div class="cart">
         <a href="">
           <img src="./assets/images/logo_rick.jpg" alt="logo">
         </a>
+        <span class="counter">{{ counter }}</span>
       </div>
     </div>
   </div>

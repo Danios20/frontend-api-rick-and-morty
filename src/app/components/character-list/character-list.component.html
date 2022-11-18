@@ -31,11 +31,12 @@
   </div>
 
   <div class="add-to-cart">
-
-    <button class="primary-button">
-      <img
-        src="./assets/svg/bt_add_to_cart.svg"
-        alt="Add to shopping cart icon"
+    <button class="primary-button"
+    (click)="onAddedCharacter($event)"
+    >
+      <img style="width: 20px;"
+        src="./assets/images/corazon.png"
+        alt="Add to favorite cart icon"
       />
       <span>
         Save as favorite
