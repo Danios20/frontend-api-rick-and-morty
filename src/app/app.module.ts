@@ -4,16 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './main/app.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
+import { FormsModule } from '@angular/forms';
+import { CharacterComponent } from './components/character/character.component';
+import { ImageComponent } from './components/image/image.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CharacterListComponent,
+    CharacterComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<div class="character-card">
+  <app-image
+    *ngIf="character.image"
+    [img]="character.image"
+    class="character-img"
+  ></app-image>
+
+  <div class="character-info">
+    <div class="character-description">
+      <p>Name: {{ character.name | slice: 0:15 }}</p>
+      <p>Status: {{ character.status }}</p>
+      <p>Species: {{ character.species }}</p>
+      <p>Last Episode: {{ character.lastEpisode }}</p>
+    </div>
+  </div>
+  <div class="character-option">
+    <button (click)="onShowDetail()" class="show-detail-btn">
+      View Detail
+    </button>
+  </div>
+</div>

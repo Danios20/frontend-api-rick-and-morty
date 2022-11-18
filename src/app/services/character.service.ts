@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
-import { map, retry } from 'rxjs';
+import { map, retry, take, tap } from 'rxjs';
 
 import { Character } from '../models/character.model';
 import { environment } from 'src/environments/environment';
@@ -18,10 +18,11 @@ export class CharacterService {
     if (page !== undefined) {
       params = params.set('page', page);
     }
-    return this.http.get<Character[]>(environment.baseUrlAPI, { params })
+    return this.http.get<Character>(environment.baseUrlAPI, { params })
     .pipe(
       retry(2),
-      map(characters => characters.map(item => {
+      tap(response => response.results),
+      map(response => response.results.map(item => {
         return {
           ...item,
           lastEpisode: item.episode.length

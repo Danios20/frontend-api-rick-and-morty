@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+// RESET
+@use './assets/styles/reset.scss';
+
+
+
+// GLOBALS
+:root {
+  --hospital-green: #050531;
+  --red: #ef3939;
+  --white: #FFFFFF;
+  --black: #000000;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.characters--grid {
+  app-image img {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) ;
+    box-sizing: border-box;
+  }
+}
+
+.swal2-container .swal2-popup {
+  font-size: 1.6rem;
+  > .swal2-actions button {
+    background-color: var(--hospital-green);
+    box-shadow: none;
+  }
+}

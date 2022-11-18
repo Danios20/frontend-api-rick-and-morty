@@ -1,4 +1,18 @@
 export interface Character {
+  info:    Info;
+  results: Result[];
+}
+
+export interface CharacterDTO extends Partial<Result> { }
+
+export interface Info {
+  count: number;
+  pages: number;
+  next:  string;
+  prev:  null;
+}
+
+export interface Result {
   id:       number;
   name:     string;
   status:   string;
@@ -18,3 +32,5 @@ export interface Location {
   name: string;
   url:  string;
 }
+
+
