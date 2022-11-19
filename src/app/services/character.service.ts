@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
-import { map, retry, take, tap } from 'rxjs';
+import { map, retry, switchMap, take, tap, zip } from 'rxjs';
 
-import { Character, CharacterDTO } from '../models/character.model';
+import { Character, CharacterDTO, Location, LocationDTO } from '../models/character.model';
 import { environment } from 'src/environments/environment';
 
 
@@ -31,7 +31,26 @@ export class CharacterService {
     )
   }
 
-  getCharacter(id: number) {
-    return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`);
+  getLocation(id: number) {
+    return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`)
+    .pipe(
+      switchMap((character) => {
+        const locationUrl = character.location?.url;
+        return this.http.get<LocationDTO>(`${locationUrl}`)
+        .pipe(
+          map((location: LocationDTO) => location));
+      })
+    );
   }
+  getCharacter(id: number) {
+    return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`)
+  }
+
+  getCharacterAndLocation(id: number) {
+    return zip (
+      this.getCharacter(id),
+      this.getLocation(id)
+    )
+  }
+
 }

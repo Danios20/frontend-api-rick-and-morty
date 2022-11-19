@@ -2,6 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterDTO } from 'src/app/models/character.model';
 import { CharacterService } from '../../services/character.service';
 import { StoreService } from '../../services/store.service';
+import Swal from 'sweetalert2';
+import { switchMap, zip } from 'rxjs';
+import { LocationDTO } from '../../models/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -12,6 +15,7 @@ export class CharacterListComponent implements OnInit {
   characterCart: CharacterDTO[] = [];
   showCharacterDetail: boolean = false;
   characterChosen!: CharacterDTO;
+  locationChosen!: LocationDTO;
   flag: boolean;
   page: number = 1;
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
@@ -55,11 +59,14 @@ export class CharacterListComponent implements OnInit {
   onShowCharacterDetail(id: number) {
     this.statusDetail = 'loading';
     this.toggleCharacterDetail();
-    this.characterService.getCharacter(id)
+    this.characterService.getCharacterAndLocation(id)
     .subscribe({
-      next: data => {
-        this.characterChosen = data;
+      next: response => {
+        this.characterChosen = response[0];
+        this.locationChosen = response[1];
         this.statusDetail = 'success';
+        console.log('characterChosen :>> ', this.characterChosen);
+        console.log('locationChosen :>> ', this.locationChosen);
       },
       error: error => {
       window.alert(error);
@@ -71,7 +78,18 @@ export class CharacterListComponent implements OnInit {
     })
   }
 
-
+  onShowProductDetail(id: string) {
+        Swal.fire({
+          icon: 'info',
+          title: 'Location',
+          html:`
+          <p>Type: ${this.locationChosen.type} </p>
+          <br>
+          <p>Dimension: ${this.locationChosen.dimension}</p>
+          <p>Number residents: ${this.locationChosen.residents.length}</p>
+          `
+        })
+  }
 
   onLoadMore() {
     this.page ++;
