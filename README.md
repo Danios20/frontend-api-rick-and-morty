@@ -41,7 +41,7 @@ $ ng serve | ng serve --port 9500 (opcional si quieres en otro puerto)
 
 
 
-## Conoce mis aportes en otrod proyectos:clapper:
+## Conoce mis aportes en otros proyectos:clapper:
 [Click aquí para ver el video](https://youtu.be/u3NOheoVhFY "CLICK AQUÍ PARA VER EL VIDEO")
 
 #### Aquí encuentras la documentación de la Api de Rick And Morty :floppy_disk:
