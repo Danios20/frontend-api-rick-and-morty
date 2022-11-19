@@ -25,9 +25,9 @@
     <p>{{ characterChosen.name }}</p>
     <p>Status: {{ characterChosen.status }}</p>
     <p>Specie: {{ characterChosen.species }}</p>
-    <p>Type: {{ characterChosen.type }}</p>
     <p>Gender: {{ characterChosen.gender }}</p>
     <p>Created: {{ characterChosen.created | date }}</p>
+    <button (click)="onShowEpisodesDetail('episodes')">Episodes</button>
   </div>
 
   <div class="add-to-cart">
@@ -48,7 +48,7 @@
     <button
     class="secondary-button"
     style="margin-top: 3px;"
-    (click)="onShowProductDetail('axc')"
+    (click)="onShowLocationDetail('axc')"
     >
       <span>
         Location

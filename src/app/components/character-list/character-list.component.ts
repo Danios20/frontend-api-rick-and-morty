@@ -78,7 +78,7 @@ export class CharacterListComponent implements OnInit {
     })
   }
 
-  onShowProductDetail(id: string) {
+  onShowLocationDetail(id: string) {
         Swal.fire({
           icon: 'info',
           title: 'Location',
@@ -87,6 +87,16 @@ export class CharacterListComponent implements OnInit {
           <br>
           <p>Dimension: ${this.locationChosen.dimension}</p>
           <p>Number residents: ${this.locationChosen.residents.length}</p>
+          `
+        })
+  }
+  onShowEpisodesDetail(id: string) {
+        Swal.fire({
+          icon: 'info',
+          title: 'Episodes',
+          html:`
+          <p>Episodes: ${this.characterChosen.episode}"  </p>
+          <br>
           `
         })
   }

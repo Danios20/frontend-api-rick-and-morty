@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
-import { map, retry, switchMap, take, tap, zip } from 'rxjs';
+import { findIndex, map, retry, switchMap, take, tap, zip } from 'rxjs';
 
 import { Character, CharacterDTO, Location, LocationDTO } from '../models/character.model';
 import { environment } from 'src/environments/environment';
