@@ -11,6 +11,9 @@ import { LocationDTO } from '../../models/character.model';
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss']
 })
+/**
+ * Clase que representa la lista de personajes
+ */
 export class CharacterListComponent implements OnInit {
   characterCart: CharacterDTO[] = [];
   showCharacterDetail: boolean = false;

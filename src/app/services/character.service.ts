@@ -9,10 +9,21 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Clase que representa el servicio que contiene la lógica del negocio
+ */
 export class CharacterService {
-
+/**
+ *
+ * @param http
+ * Se inyecta el modulo para hacer peticiones de tipo Rest
+ */
   constructor(private http: HttpClient) { }
-
+/**
+ *Metodo para hacer petición de tipo Get a todos los personajes de la Api
+ * @param page
+ * @returns colección de personajes
+ */
   getAllCharacters(page?: number) {
     let params = new HttpParams();
     if (page !== undefined) {
@@ -30,10 +41,16 @@ export class CharacterService {
       }))
     )
   }
-
+/**
+ * Metodo para hacer petición de tipo Get de forma individual
+ * @param id
+ * @returns Objeto de Location
+ */
   getLocation(id: number) {
     return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`)
+    // Se modifica la peticion con un pipe
     .pipe(
+      // Permite mapear la respuesta
       switchMap((character) => {
         const locationUrl = character.location?.url;
         return this.http.get<LocationDTO>(`${locationUrl}`)
@@ -42,10 +59,19 @@ export class CharacterService {
       })
     );
   }
+  /**
+   *Metodo Get para traer la vista detalle del personaje
+   * @param id
+   * @returns Objeto de tipo personaje
+   */
   getCharacter(id: number) {
     return this.http.get<CharacterDTO>(`${environment.baseUrlAPI}/${id}`)
   }
-
+/**
+ *Metodo que realiza dos peticiones al tiempo
+ * @param id
+ * @returns DTO del personaje de la locacion
+ */
   getCharacterAndLocation(id: number) {
     return zip (
       this.getCharacter(id),

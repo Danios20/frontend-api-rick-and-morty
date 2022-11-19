@@ -1,10 +1,10 @@
+<!-- Vista del personaje -->
 <div class="character-card">
   <app-image
     *ngIf="character.image"
     [img]="character.image"
     class="character-img"
   ></app-image>
-
   <div class="character-info">
     <div class="character-description">
       <p>Name: {{ character.name | slice: 0:15 }}</p>

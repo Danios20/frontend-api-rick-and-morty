@@ -1,17 +1,26 @@
+/**
+ * Modelo para Personaje
+ */
 export interface Character {
   info:    Info;
   results: Result[];
 }
-
+/**
+ * Dto para personaje que hereda de la interfaz Resulta
+ */
 export interface CharacterDTO extends Partial<Result> { }
-
+/**
+ * Modelo Info
+ */
 export interface Info {
   count: number;
   pages: number;
   next:  string;
   prev:  null;
 }
-
+/**
+ * Modelo result que representa los personajes
+ */
 export interface Result {
   id:       number;
   name:     string;
@@ -27,12 +36,16 @@ export interface Result {
   created:  string;
   lastEpisode?: number;
 }
-
+/**
+ * Modelo que tipo de Locacion
+ */
 export interface Location {
   name: string;
   url:  string;
 }
-
+/**
+ * Data Transfer Object para Location
+ */
 export interface LocationDTO {
   id:        number;
   name:      string;
@@ -42,7 +55,9 @@ export interface LocationDTO {
   url:       string;
   created:   string;
 }
-
+/**
+ * Modelo de tipo episodio
+ */
 export interface Episode {
   id:         number;
   name:       string;

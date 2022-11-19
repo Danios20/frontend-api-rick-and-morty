@@ -1,3 +1,4 @@
+<!-- Aquí se hace el render de los personajes de rick and morty -->
 <div class="characters--grid">
   <app-character
     [character]="character"
@@ -5,7 +6,7 @@
     (showCharacterDetail)="onShowCharacterDetail($event)"
   ></app-character>
 </div>
-
+<!-- Aquí se muestra el detalle del personaje seleccionado -->
 <aside
   *ngIf="characterChosen"
   class="character-detail"
@@ -16,6 +17,7 @@
     src="./assets/images/icon_close.png"
     alt="Close icon"
   />
+  <!-- Aquí se hace el render del componente img -->
   <app-image
   *ngIf="characterChosen.image"
   [img]="characterChosen.image"
@@ -30,6 +32,7 @@
     <button (click)="onShowEpisodesDetail('episodes')">Episodes</button>
   </div>
 
+<!-- Aquí se hace el render de guardar  los personajes favoritos -->
   <div class="add-to-cart">
     <button
     class="primary-button"
