@@ -12,7 +12,7 @@ Instala las dependencias de este proyecto con el siguiente comando/
 $ npm install
 ```
 ## Corre el servidor
-Corremos nuestro servidor en Node Js.
+Corremos nuestro poyecto con el comando /.
 ```
 $ ng serve | ng serve --port 9500 (opcional si quieres en otro puerto)
 ```
@@ -41,7 +41,7 @@ $ ng serve | ng serve --port 9500 (opcional si quieres en otro puerto)
 
 
 
-## VIDEO :clapper:
+## Conoce mis aportes en otrod proyectos:clapper:
 [Click aquí para ver el video](https://youtu.be/u3NOheoVhFY "CLICK AQUÍ PARA VER EL VIDEO")
 
 #### Aquí encuentras la documentación de la Api de Rick And Morty :floppy_disk:
