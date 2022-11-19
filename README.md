@@ -1,27 +1,44 @@
-# FrontendApiRickAndMorty
+# FrontendApiRickAndMorty :game_die:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+## Instalación
+###Clona
+Repositorio
+```
+https://github.com/Danios20/frontend-api-rick-and-morty.git
+```
+Instala las dependencias de este proyecto con el siguiente comando/
+```
+$ npm install
+```
+## Corre el servidor
+Corremos nuestro servidor en Node Js.
+```
+$ ng serve | ng serve --port 9500 (opcional si quieres en otro puerto)
+```
+## Modulos
+##### Vista general
+![image](https://user-images.githubusercontent.com/65303390/202832859-2a3230e6-9ed8-414b-b271-4c9f89076a04.png)
+##### Así se cargan nuevos personajes desde el paginator
+![image](https://user-images.githubusercontent.com/65303390/202832901-18284ce2-7c54-4657-8233-b41e13ac3284.png)
+##### Así se lista el detalle de un personaje
+![image](https://user-images.githubusercontent.com/65303390/202833005-a714e525-61bc-4e63-bfde-1ad03f61ab3b.png)
 
-## Development server
+##### Así se guarda un personaje en el local storage
+![image](https://user-images.githubusercontent.com/65303390/202833181-6851bfb1-f367-44e0-9567-649056c723ee.png)
+##### Así se visualiza los personajes que se son almacenados en el local storage
+![image](https://user-images.githubusercontent.com/65303390/202833291-ad994864-2e72-4547-a4e5-702efc56bcfb.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## VIDEO :clapper:
+[Click aquí para ver el video](https://youtu.be/u3NOheoVhFY "CLICK AQUÍ PARA VER EL VIDEO")
 
-## Code scaffolding
+#### Backend Spring Boot + Base datos Mysql :floppy_disk:
+```
+https://github.com/Danios20/bingo-backend-java.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construido con
+Pug / CSS / Boostrap / JavaScript / Java 11 / Spring Boot Framework / Mysql / Node Js / Express Js / Mongo Db
 
-## Build
+# Desarrollado por
+Hecho con :heart: de Oscar Sanabria para SokfaU
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
