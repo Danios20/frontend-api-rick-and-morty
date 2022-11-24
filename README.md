@@ -1,4 +1,5 @@
 # FrontendApiRickAndMorty :game_die:
+#### Oscar Danilo Sanabria Sogamoso
 Este proyecto se basa en la contrucción de una aplicación frontend que tiene como objetivo explorar su creatividad en el consumo de la Api de Rick And Morty.
 
 ## Instalación
